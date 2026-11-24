@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10224b">
+  <meta name="description" content="长按蓄力，松手起跳。和冰晶女王一起跳过浮在极光下的冰台。">
+  <title>冰晶跳跳</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="sprites.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <main id="game" data-mode="intro" aria-label="冰晶跳跳">
+    <canvas id="world" aria-label="冰晶女王和浮空冰台"></canvas>
+    <header class="hud">
+      <div class="brand"><span class="mark" aria-hidden="true"></span><span class="brand-name">冰晶跳跳</span></div>
+      <div class="toolset">
+        <button type="button" class="utility" id="mute" aria-label="关闭音效" aria-pressed="false" title="音效"><span class="note" aria-hidden="true">♪</span></button>
+        <button type="button" class="utility fullscreen" id="fullscreen" aria-label="全屏" title="全屏（F）"><span class="corners" aria-hidden="true"></span></button>
+      </div>
+    </header>
+    <div class="scoreboard" aria-label="计分" hidden>
+      <span class="record">最高纪录 <b id="best">0</b></span>
+      <output id="score" aria-label="本局得分" aria-live="polite">0</output>
+      <span class="score-message" id="score-message" aria-hidden="true"></span>
+    </div>
+    <section class="panel opening" id="intro" aria-labelledby="game-title">
+      <h1 id="game-title">冰晶<span>跳跳</span></h1>
+      <p>长按蓄力，松手跳向下一座冰台。</p>
+      <button type="button" class="primary" id="start-btn" disabled>开始挑战</button>
+      <small class="input-hint"><span class="touch-hint">手机触屏</span><span class="desktop-hint">鼠标 / 空格键</span></small>
+    </section>
+    <section class="panel result" id="result" aria-labelledby="result-title" hidden>
+      <h2 id="result-title">落进雪雾了</h2>
+      <p id="result-copy" aria-live="polite"></p>
+      <button type="button" class="primary" id="retry">再跳一次</button>
+    </section>
+    <footer class="controls" hidden>
+      <div class="meter" id="meter" role="progressbar" aria-label="蓄力" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="meter-fill" id="meter-fill"></div>
+        <div class="meter-ticks" aria-hidden="true"></div>
+      </div>
+      <button type="button" class="hold" id="hold" aria-label="长按蓄力，松手跳跃"><span class="mark small" aria-hidden="true"></span><span id="hold-text">长按蓄力</span></button>
+    </footer>
+    <noscript><p class="no-script">启用 JavaScript 后即可游玩。</p></noscript>
+  </main>
+</body>
+</html>
